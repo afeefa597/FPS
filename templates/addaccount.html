@@ -1,0 +1,54 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+		<link rel="stylesheet" href="{% static 'sample1.css' %}">
+
+		<script type="text/javascript">
+		 function valid()
+			{
+			if(j1.phone.value.length!=10)
+				{
+					alert("phone number should be atleast 10...");
+					 j1.phone.focus();
+					return false;
+				}
+		    return true;
+
+			}
+		</script>
+	</head>
+	
+	<div class="basic" >
+		{% include "header.html" %}
+	</div>
+
+
+<div  class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/addaccount1/" name="j1">
+			{% csrf_token %}
+			<input type="text" placeholder="Acct_id" name="Acct_id"  value="{{ff}}"/><br>
+			<select name="role">
+				<option value="supporter">supporter</option>
+				<option value="womencell">womencell</option>
+				<option value="childwelfare">childwelfare</option>
+				<option value="police">police</option>
+			</select>
+            <input type="number" placeholder="contact_person" name="contact_person" required />
+            <input type="number" placeholder="phone" name="phone" required /><br>
+			<input type="email" placeholder="email" name="email" required/><br>
+            <input type="text" placeholder="address" name="address" required/><br>
+			
+			<button onclick="return valid()">Sign In</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>
+

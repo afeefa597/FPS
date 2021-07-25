@@ -1,0 +1,49 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+		<link rel="stylesheet" href="{% static 'sample1.css' %}">
+		<script type="text/javascript">
+			function valid()
+			   {
+			   if(j1.contact.value.length!=10)
+				   {
+					   alert("phone number should be atleast 10...");
+						j1.contact.focus();
+					   return false;
+				   }
+			   return true;
+   
+			   }
+		   </script>
+		 
+	</head>
+
+	<div class="basic" >
+		{% include "publicheader1.html" %}
+	</div>
+
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/victim_register1/" name="j1">
+			{% csrf_token %}
+			<input type="text" placeholder="Victim_id" name="Victim_id"  value="{{ff}}"/><br>
+			<input type="text" placeholder="name" name="name" required/><br>
+            <input type="number" placeholder="age" name="age" required/><br>
+            <input type="text" placeholder="sex" name="sex" required/><br>
+			<input type="text" placeholder="address" name="address" required/><br>           
+            <input type="number" placeholder="contact" name="contact" required/><br>
+			<input type="email" placeholder="email" name="email" required/><br>
+
+			<button onclick="return valid()">Register</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>

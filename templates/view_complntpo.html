@@ -1,0 +1,38 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "policeheader.html" %}
+	</div>
+
+
+	
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/view_complntpo2/{{items.Complaint_id}}">
+			{% csrf_token %}
+            <input type="text" placeholder="Complaint_id " name="Complaint_id"  value="{{items.Complaint_id}}"/><br>
+            <input type="text" placeholder="Victim_id" name="Victim_id" value="{{items.Victim_id}}"/><br>
+			<input type="text" placeholder="complaint" name="complaint" value="{{items.complaint}}"/><br>
+            <input type="date" placeholder="complaint_date" name="complaint_date" value="{{items.complaint_date}}" />
+            <input type="text" placeholder="remark" name="remark" value="{{items.remark}}" /><br>
+            <label>Please enter your action</label>
+            <input type="text" placeholder="action" name="action" required/><br>
+            
+            
+			
+			<button>Submit</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>

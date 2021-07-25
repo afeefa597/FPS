@@ -1,0 +1,40 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+        {% include "supporterheader.html" %}
+        
+    </div> 
+    <body>
+        <table id="customers">
+            <tr>  
+                <th>Victim_id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>sex</th>
+                <th>address</th>   
+                <th>contact</th>   
+                <th>email</th>              
+                
+            </tr>
+           
+            <tr>  
+                <td>{{ it.Victim_id }}</td>
+                <td>{{ name }}</td>
+                <td>{{ it.age }}</td>
+                <td>{{ it.sex }}</td>
+                <td>{{ it.address }}</td> 
+                <td>{{ it.contact }}</td>  
+                <td>{{ it.email }}</td>               
+               
+               
+           
+            </tr>
+        </table>
+    </body>
+</html>

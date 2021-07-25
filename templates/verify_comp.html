@@ -1,0 +1,38 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+		{% include "supporterheader.html" %}
+	</div>
+
+    <body>
+        <table id="customers">
+            <tr>  
+                <th>Complaint_id</th>
+                <th>Victim_id</th>
+                <th>complaint</th>
+                <th>complaint_date</th>
+                <th>remark</th>              
+                
+            </tr>
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.Complaint_id }}</td>
+                <td>{{ ct.Victim_id }}</td>
+                <td>{{ ct.complaint}}</td>
+                <td>{{ ct.complaint_date }}</td>
+                <td>{{ ct.remark }}</td>              
+               
+
+                <td><a href="/victim_details1/{{ ct.Victim_id }}">Victim details</a></td>
+                <td><a href="/take_action1/{{ ct.Complaint_id }}">Take Action</a></td>
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

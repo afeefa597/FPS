@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+		{% include "publicheader1.html" %}
+	</div>
+
+    <body>
+        <table id="customers">
+
+            <tr>  
+                <th>violations</th>
+                <th>rules</th>
+                <th>punishments</th>
+                
+            </tr>
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.violations }}</td>
+                <td>{{ ct.rules }}</td>
+                <td>{{ ct.punishments }}</td>
+               
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

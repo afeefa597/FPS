@@ -1,0 +1,35 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "supporterheader.html" %}
+	</div>
+
+<div class="container" id="container">
+		<div class="form-container sign-in-container">
+		<form method="post" action="/take_action2/">
+			{% csrf_token %}
+
+			<input type="text" placeholder="Action_id" name="Action_id"  value="{{ff}}"/><br>
+			<input type="text" value="{{it}}" name="Complaint_id"/><br>
+            <input type="text" placeholder="action" name="action" required /><br>
+            <input type="text" value="{{sid}}" name="takenby"/><br>
+            <input type="text" placeholder="remark" name="remark" required/><br>
+            <select name="redirectto">
+				<option value="womencell">womencell</option>
+				<option value="childwelfare">childwelfare</option>
+				<option value="police">police</option>
+			</select>             
+			<button>ACTION</button>
+				
+		</form>
+	</div>	
+	<div class="overlay-container">
+		<div class="overlay">			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+		{% include "header.html" %}
+	</div>
+
+    <body>
+        <table id="customers">
+            <tr>  
+                <th>prg_name</th>
+                <th>description</th>
+                <th>conducted_by</th>
+                <th>veue</th>
+                <th>date</th>
+                <th>time</th>
+               
+                
+                
+            </tr>
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.prg_name }}</td>
+                <td>{{ ct.description }}</td>
+                <td>{{ ct.conducted_by }}</td>
+                <td>{{ ct.venue }}</td>
+                <td>{{ ct.date }}</td>
+                <td>{{ ct.time }}</td>
+               
+               
+                
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

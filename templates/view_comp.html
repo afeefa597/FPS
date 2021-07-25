@@ -1,0 +1,39 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+		{% include "childwelfareheader.html" %}
+	</div>
+
+    <body>
+        <table id="customers">
+            <tr>  
+                <th>Child_id</th>
+                <th>Complaint_id</th>
+                <th>findings </th>
+                <th>redirect_date</th>
+               
+               
+                
+                
+            </tr>
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.Child_id }}</td>
+                <td>{{ ct.Complaint_id}}</td>
+                <td>{{ ct.findings }}</td>
+                <td>{{ ct.redirect_date}}</td>
+
+                <td><a href="/victimdetailc1/{{ ct.Complaint_id }}">Victim details</a></td>
+                <td><a href="/view_compchi1/{{ ct.Complaint_id }}">View complaint</a></td>
+                
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

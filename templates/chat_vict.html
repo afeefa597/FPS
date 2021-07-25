@@ -1,0 +1,35 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample1.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "supporterheader.html" %}
+	</div>
+
+<div class="container" id="container">
+		<div class="form-container sign-in-container">
+		<form method="post" action="/chat_vict2/">
+			{% csrf_token %}
+
+			<input type="text" placeholder="Chat_id" name="Chat_id"  value="{{ff}}"/><br>
+			<input type="text" value="{{it}}" name="Victim_id"/><br>
+            <input type="text" value="{{aid}}" name="Authority_id"/><br>
+            <input type="text" placeholder="chat" name="chat" required /><br>
+            <input type="date" placeholder="date" name="date" required/><br>
+            <input type="time" placeholder="time" name="time" required/><br>
+           
+			
+			
+                
+			<button>SUBMIT</button>
+				
+		</form>
+	</div>	
+	<div class="overlay-container">
+		<div class="overlay">			
+		</div>
+	</div>
+</div>

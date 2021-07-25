@@ -1,0 +1,39 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "womencellheader.html" %}
+	</div>
+
+
+
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/redirect_poliwm2/">
+			{% csrf_token %}
+
+			<input type="text" placeholder="Policecomp_id" name="Policecomp_id"  value="{{ff}}"/><br>
+			<input type="text" value="{{items}}" name="Complaint_id"/><br>
+			<input type="text" placeholder="findings" name="findings" required/><br>
+			<input type="date" placeholder="date" name="date" required/><br>
+            
+            
+
+            
+			<button>SUBMIT</button>
+				
+		</form>
+	</div>
+    
+    <div class="overlay-container">
+		<div class="overlay">
+	
+		</div>
+	</div>
+</div>

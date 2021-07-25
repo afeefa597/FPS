@@ -1,0 +1,40 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+    <div class="basic" >
+		{% include "victimheader.html" %}
+	</div>
+
+    <body>
+        <table id="customers">
+
+            <tr>  
+                <th>Chat_id</th>
+                <th>Victim_id</th>
+                <th>Authority_id</th>
+                <th>chat</th>
+                <th>date</th>
+                <th>time</th>
+               
+                
+            </tr>
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.Chat_id }}</td>
+                <td>{{ ct.Victim_id }}</td>
+                <td>{{ ct.Authority_id }}</td>
+                <td>{{ ct.chat }}</td>
+                <td>{{ ct.date }}</td>
+                <td>{{ ct.time }}</td>
+                
+                <td><a href="/give_response1/{{ ct.Chat_id }}">Give Response</a></td>  
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

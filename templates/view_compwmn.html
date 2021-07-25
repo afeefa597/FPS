@@ -1,0 +1,37 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample1.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "womencellheader.html" %}
+	</div>
+
+
+	
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/view_compwmn2/{{items.Complaint_id}}">
+			{% csrf_token %}
+            <input type="text" placeholder="Complaint_id" name="Complaint_id"  value="{{items.Complaint_id}}"/><br>
+            <input type="text" placeholder="Victim_id" name="Victim_id" value="{{items.Victim_id}}"/><br>
+			<input type="text" placeholder="complaint" name="complaint" value="{{items.complaint}}"/><br>
+            <input type="date" placeholder="complaint_date" name="complaint_date" value="{{items.complaint_date}}" />
+           
+           
+            
+			
+			<td><a href="/view_compwmact1/{{items.Complaint_id}}">Take action</a></td>
+			<td><a href="/redirect_poliwm1/{{items.Complaint_id}}">Redirect to police</a></td>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>

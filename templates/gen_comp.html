@@ -1,0 +1,37 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "victimheader.html" %}
+	</div>
+
+
+	
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/gen_comp1/">
+			{% csrf_token %}
+            <input type="text" placeholder="Complaint_id " name="Complaint_id"  value="{{ff}}"/><br>
+            <input type="text" value="{{vid}}" name="Victim_id"/><br>
+			<input type="text" placeholder="complaint" name="complaint" required/><br>
+            <input type="date" placeholder="complaint_date" name="complaint_date" required/>
+            <input type="text" placeholder="remark" name="remark" required/><br>
+			
+            
+            
+			
+			<button>Register</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>

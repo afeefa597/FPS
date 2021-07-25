@@ -1,0 +1,44 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'table1.css' %}" >
+        
+
+    </head>
+
+
+    
+
+    <div class="basic" >
+		{% include "header.html" %}
+	</div>
+
+    <body>
+       
+            
+        
+        <table id="customers">
+            <tr>  
+                <th>role</th>
+                <th>contact_person</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>address</th>
+                <th>status</th>
+            </tr>
+
+            {% for ct in it %}
+            <tr>  
+                <td>{{ ct.role }}</td>
+                <td>{{ ct.contact_person }}</td>
+                <td>{{ ct.phone }}</td>
+                <td>{{ ct.email }}</td>
+                <td>{{ ct.address }}</td>
+                <td>{{ ct.status }}</td>
+
+                <td><a href="/remove_acct1/{{ ct.id }}">remove</a></td>
+               {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

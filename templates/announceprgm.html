@@ -1,0 +1,36 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "header.html" %}
+	</div>
+
+
+	
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/announceprgm1/">
+			{% csrf_token %}
+			<input type="text" placeholder="Awareness_id" name="Awareness_id"  value="{{ff}}"/><br>
+			<input type="text" placeholder="prg_name" name="prg_name" required/><br>
+            <input type="text" placeholder="description" name="description" required />
+			<input type="text" placeholder="conducted_by" name="conducted_by" required/><br>
+			<input type="text" placeholder="venue" name="venue" required/><br>
+			<input type="date" placeholder="date" name="date" required/><br>
+            <input type="time" placeholder="time" name="time" required/><br>
+			
+			<button>Save</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>

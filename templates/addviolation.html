@@ -1,0 +1,38 @@
+<html>
+    <head>
+		{% load static %}
+	</head>
+        <link rel="stylesheet" href="{% static 'sample.css' %}">
+	</head>
+
+	<div class="basic" >
+		{% include "header.html" %}
+	</div>
+
+
+
+<div class="container" id="container">
+
+	
+
+
+	
+	<div class="form-container sign-in-container">
+		<form method="post" action="/addviolation1/">
+			{% csrf_token %}
+			<input type="text" placeholder="Rule_id" name="Rule_id"  value="{{ff}}"/><br>
+			<input type="text" placeholder="violations" name="violations" required/><br>
+            <input type="text" placeholder="rules" name="rules" required/>
+            <input type="text" placeholder="punishments" name="punishments" required/><br>
+			
+			<button>Save</button>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+		</div>
+	</div>
+</div>
+
